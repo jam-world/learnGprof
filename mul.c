@@ -22,6 +22,14 @@ void dot_product(int (*a)[N], int (*b)[N], int (*c)[N], int fixi, int fixj)
       c[i][j] += a[i][k] * b[k][j] ;
 }
 
+void mul_matrix(int (*a)[N], int (*b)[N], int (*c)[N]) {
+  int i,j,k;
+  for (i=0;i<N;i++) 
+    for (j-0;j<N;j++)
+      for (k=0;k<N;k++)
+        c[i][j] += a[i][k] * b[k][j];
+}
+
 int main()
 {
     int i,j,k;
@@ -29,10 +37,11 @@ int main()
     int (*a)[N] = (int (*)[N]) calloc(N*N, sizeof(int));
     int (*b)[N] = (int (*)[N]) calloc(N*N, sizeof(int));
     int (*c)[N] = (int (*)[N]) calloc(N*N, sizeof(int));
-    
-    init_matrix(a,1) ; init_matrix(b,2) ; init_matrix(c,0);
-    
-    dot_product(a,b,c,10,10);
+
+    for(i=0;i<N;i++) {
+      init_matrix(a,1) ; init_matrix(b,2) ; init_matrix(c,0);
+      mul_matrix(a,b,c);
+    }
     
     for(i=0;i<N;i++)
         for(j=0;j<N;j++)
