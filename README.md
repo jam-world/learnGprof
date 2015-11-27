@@ -49,6 +49,7 @@ We can use the clock() function to count the running time of the program, I modi
 I modified the program and stored it in dotpruoductCountTimeLocate.c
 
 # question 6
+I put it in the dotpruoductCountTimeForQuestion6, it seems I got some problem with this question, It cost the computer too long to run it, thus it shift to do the compiler and forget to submit it.
 
 
 

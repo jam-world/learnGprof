@@ -35,6 +35,8 @@ int main(int argc, char* argv[])
 {
     int i,j,k;
     int res = 0;
+    int count;
+    double sum;
 
     //printf("argc = %d\n", argc);
     if(argc==2)
@@ -45,11 +47,16 @@ int main(int argc, char* argv[])
     int (*b)[N] = (int (*)[N]) calloc(N*N, sizeof(int));
     int (*c)[N] = (int (*)[N]) calloc(N*N, sizeof(int));
 
+    sum = 0;
+    for (count=0;count<100;count++) {
     clock_t startClock = clock();
     init_matrix(a,1) ; init_matrix(b,2) ; init_matrix(c,0);
     mul_matrix(a,b,c);
     clock_t endClock = clock();
-    printf("%d %ld\n",N,(endClock-startClock));
+    sum += (endClock-startClock);
+    }
+    sum = sum / 100.0;
+    printf("%d %lf\n",N,sum);
 
 
     for(i=0;i<N;i++)
